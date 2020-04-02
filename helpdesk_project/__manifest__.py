@@ -15,8 +15,11 @@
     "PESOL ,"
     "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/helpdesk",
-    "depends": ["helpdesk_mgmt"],
-    "data": [],
+    "depends": ["project", "helpdesk_mgmt"],
+    "data": [
+        "views/helpdesk_project_task_views.xml",
+        "views/helpdesk_project_ticket_views.xml",
+    ],
     "demo": [],
     "development_status": "Alpha",
     "application": True,
