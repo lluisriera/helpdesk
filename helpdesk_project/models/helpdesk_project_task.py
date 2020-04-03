@@ -18,7 +18,7 @@ class ProjectTask(models.Model):
             task.ticket_count = len(task.ticket_ids)
 
     def task_action_view_tickets(self):
-        action = self.env.ref("helpdesk_project.taskaction_ticket_new").read()[0]
+        action = self.env.ref("helpdesk_project.task_action_ticket_new").read()[0]
         action['context'] = {
             'default_task_id': self.id,
             'default_project_id': self.project_id and self.project_id.id,
@@ -26,7 +26,7 @@ class ProjectTask(models.Model):
         return action
 
     def action_new_ticket(self):
-        action = self.env.ref("helpdesk_project.taskaction_ticket_new").read()[0]
+        action = self.env.ref("helpdesk_project.task_action_ticket_new").read()[0]
         action['context'] = {
             'default_task_id': self.id,
             'default_project_id': self.project_id and self.project_id.id,
